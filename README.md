@@ -33,15 +33,15 @@ https://swaggerhub.com/apis/DevMountain/social_mountain/1.0.0
 In this step, we'll use `axios` to fetch `posts` from the API and render them on the `DOM`.
 
 ### Instructions
-
+<!-- 
 * Add `axios` to the project using `npm install --save axios`.
 * Open `./src/components/App.js`.
-* Import `axios` into the component.
-* Use `axios` and the API documentation to fetch `posts` in the `componentDidMount` method.
-  * Set the `posts` array returned from the API onto `posts` on `state`.
-* Import the `Post` component.
-* Underneathe the `Compose` component, map over `posts` on `state` and render a `Post` component for each `post`.
-  * Remember that React requires a unique key property when using a `map`.
+* Import `axios` into the component. -->
+<!-- * Use `axios` and the API documentation to fetch `posts` in the `componentDidMount` method. -->
+  <!-- * Set the `posts` array returned from the API onto `posts` on `state`. -->
+<!-- * Import the `Post` component. -->
+<!-- * Underneath the the `Compose` component, map over `posts` on `state` and render a `Post` component for each `post`.
+  * Remember that React requires a unique key property when using a `map`. -->
 
 <details>
 
@@ -180,13 +180,13 @@ In this step, we'll pass `props` down into the `Post` component in order to see 
 
 ### Instructions
 
-* Open `./src/components/App.js`.
+<!-- * Open `./src/components/App.js`.
 * In the `render` method, update the `map` to send the following `props` into `Post`:
   * `text` - Should equal the `post`'s `text`.
-  * `date` - Should equal the `post`'s `date`.
-* Open `./src/components/Post/Post.js`.
-* Update `POST DATE GOES HERE` to equal the value of `date` on `props`.
-* Update `POST TEXT GOES HERE` to equal the value of `text` on `props`.
+  * `date` - Should equal the `post`'s `date`. -->
+<!-- * Open `./src/components/Post/Post.js`. -->
+<!-- * Update `POST DATE GOES HERE` to equal the value of `date` on `props`. -->
+<!-- * Update `POST TEXT GOES HERE` to equal the value of `text` on `props`. -->
 
 <details>
 
@@ -305,12 +305,12 @@ In this step, we'll create the `updatePost` method to use `axios` to update a `p
 
 ### Instructions
 
-* Open `./src/components/App.js`.
+<!-- * Open `./src/components/App.js`.
 * In the `updatePost` method, use `axios` to send a `PUT` request to the correct endpoint.
-  * Remember that this method will need to work for any `post`. Hint: `function parameters`.
-  * Use the returned data from the request to update `posts` on `state`.
-* Pass the `updatePost` method down as a `prop` called `updatePostFn` in the `posts` `map`.
-* Add a new `prop` to the `map` called `id` that equals the `post`'s `id`.
+  * Remember that this method will need to work for any `post`. Hint: `function parameters`. -->
+  <!-- * Use the returned data from the request to update `posts` on `state`. -->
+<!-- * Pass the `updatePost` method down as a `prop` called `updatePostFn` in the `posts` `map`. -->
+<!-- * Add a new `prop` to the `map` called `id` that equals the `post`'s `id`. -->
 
 <details>
 
@@ -441,17 +441,17 @@ In this step, we'll make the `Edit` button functional by using the `updatePostFn
 
 ### Instructions
 
-* Open `./src/components/Post/Post.js`.
+<!-- * Open `./src/components/Post/Post.js`.
 * Locate the `<div>` element with the class of `Post__content`.
   * In this `div` we either render the `Edit` component or the `post`'s `text`.
 * Add a new `prop` to the `Edit` component called `updatePostFn` that equals `updatePostFn` off of `props`.
 * Add a new `prop` to the `Edit` component called `id` that equals `id` off of `props`.
 * Update the `text` `prop` to equal `text` off of `props`.
-* Open `./src/components/Post/Edit/Edit.js`.
-* Update the `updatePost` method to:
-  * Call `updatePostFn` off of `props` with the correct `id` and `text` arguments.
-  * Call `hideEdit` off of `props` after `updatePostFn`.
-    * `hideEdit` is reponsible for toggling the `Edit` component off after pressing the `update` button.
+* Open `./src/components/Post/Edit/Edit.js`. -->
+<!-- * Update the `updatePost` method to:
+  * Call `updatePostFn` off of `props` with the correct `id` and `text` arguments. -->
+  <!-- * Call `hideEdit` off of `props` after `updatePostFn`. -->
+    <!-- * `hideEdit` is reponsible for toggling the `Edit` component off after pressing the `update` button. -->
 
 <details>
 
@@ -541,13 +541,13 @@ In this step, we'll create the `deletePost` method to use `axios` to delete a `p
 
 ### Instructions
 
-* Open `./src/components/App.js`.
-* In the `deletePost` method, use `axios` to send a `DELETE` request to the correct endpoint.
-  * Remember that this method will need to work for any `post`. Hint: `function parameters`.
-  * Use the returned data from the request to update `posts` on `state`.
-* Pass the `deletePost` method down as a `prop` called `deletePostFn` in the `posts` `map`.
-* Open `./src/components/Post/Post.js`.
-* Update the `delete` `span` element to use an `onClick` event that calls `deletePostFn` off of `props`.
+<!-- * Open `./src/components/App.js`. -->
+<!-- * In the `deletePost` method, use `axios` to send a `DELETE` request to the correct endpoint.
+  * Remember that this method will need to work for any `post`. Hint: `function parameters`. -->
+  <!-- * Use the returned data from the request to update `posts` on `state`. -->
+<!-- * Pass the `deletePost` method down as a `prop` called `deletePostFn` in the `posts` `map`. -->
+<!-- * Open `./src/components/Post/Post.js`.
+* Update the `delete` `span` element to use an `onClick` event that calls `deletePostFn` off of `props`. -->
 
 <details>
 
