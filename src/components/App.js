@@ -32,7 +32,7 @@ class App extends Component {
   }
 
   updatePost(id, text) {
-    axios.post(`${this.state.baseUrl}/posts?id=${id}`, { text: text } )
+    axios.put(`${this.state.baseUrl}/posts?id=${id}`, { text } )
     .then(res => {
       this.setState({
         posts: res.data
@@ -40,12 +40,30 @@ class App extends Component {
     })
   }
 
-  deletePost() {
+  deletePost(id) {
     axios.delete(`${this.state.baseUrl}/posts?id=${id}`)
+    .then(res => {
+      this.setState({
+        posts: res.data
+      })
+    })
   }
 
-  createPost() {
+  createPost(text) {
+    axios.post(`${this.state.baseUrl}/posts`, { text: text } )
+    .then(res => {
+      this.setState({posts: res.data
+      })
+    })
+  }
 
+  filterPost = (text) => {
+    axios.get(`${this.state.baseUrl}/posts/filter?text=${text}`)
+    .then(res => {
+      this.setState({
+        posts: res.data
+      })
+    })
   }
 
   render() {
@@ -53,11 +71,11 @@ class App extends Component {
 
     return (
       <div className="App__parent">
-        <Header />
+        <Header filterPostFn={ this.filterPost } />
 
         <section className="App__content">
 
-          <Compose />
+          <Compose createPostFn={ this.createPost }/>
           {posts.map(post => {
             return <Post 
               key={post.id}
@@ -65,7 +83,8 @@ class App extends Component {
               text={post.text}
               date={post.date}
               updatePostFn={ this.updatePost }
-              deletePostFun={ this.deletePost } />
+              deletePostFn={ this.deletePost }
+              />
           })}
         </section>
       </div>
