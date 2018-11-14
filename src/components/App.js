@@ -22,9 +22,14 @@ class App extends Component {
   }
   
   componentDidMount() {
+    this.homePage();
+  }
+
+
+  homePage = () => {
     let promise = axios.get(`${this.state.baseUrl}/posts`)
     promise.then(res => {
-      console.log("Running");
+      // console.log("Running");
       this.setState({
         posts: res.data
       })
@@ -71,7 +76,7 @@ class App extends Component {
 
     return (
       <div className="App__parent">
-        <Header filterPostFn={ this.filterPost } />
+        <Header filterPostFn={ this.filterPost } homePage={ this.homePage }/>
 
         <section className="App__content">
 
